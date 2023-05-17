@@ -1,0 +1,8 @@
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\bin\Debug\Hospital Management System.exe.config
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\bin\Debug\Hospital Management System.exe
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\bin\Debug\Hospital Management System.pdb
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\obj\Debug\Hospital Management System.csproj.AssemblyReference.cache
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\obj\Debug\Hospital Management System.csproj.SuggestedBindingRedirects.cache
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\obj\Debug\Hospital Management System.csproj.CoreCompileInputs.cache
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\obj\Debug\Hospital Management System.exe
+D:\Invia C# Programs day wise\QuickSolutions\Hospital Management System\obj\Debug\Hospital Management System.pdb
