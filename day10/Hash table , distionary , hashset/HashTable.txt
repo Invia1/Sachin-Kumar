@@ -1,0 +1,39 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a new Hashtable
+        Hashtable hashtable = new Hashtable();
+
+        // Add key-value pairs to the Hashtable
+        hashtable.Add("apple", "red");
+        hashtable.Add("banana", "yellow");
+        hashtable.Add("orange", "orange");
+
+        // Access values by key
+        string appleColor = (string)hashtable["apple"];
+        string bananaColor = (string)hashtable["banana"];
+        string orangeColor = (string)hashtable["orange"];
+
+        // Modify value by key
+        hashtable["banana"] = "green";
+
+        // Check if a key exists
+        bool containsApple = hashtable.ContainsKey("apple");
+        bool containsGrape = hashtable.ContainsKey("grape");
+
+        // Remove a key-value pair
+        hashtable.Remove("orange");
+
+        // Iterate over key-value pairs
+        foreach (DictionaryEntry entry in hashtable)
+        {
+            string key = (string)entry.Key;
+            string value = (string)entry.Value;
+            Console.WriteLine("Key: " + key + ", Value: " + value);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+In C#, both IEnumerable and ICollection are interfaces used for working with collections, but they serve different purposes.
+
+IEnumerable:
+The IEnumerable interface represents a sequence of elements and provides an iterator (IEnumerator) to traverse the elements in a collection. It defines a single method, GetEnumerator(), which returns an instance of IEnumerator. This interface allows you to iterate over the collection using a foreach loop or LINQ queries.
+Here's an example using IEnumerable:
+
+csharp
+Copy code
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        MyCollection collection = new MyCollection();
+
+        foreach (string item in collection)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+class MyCollection : IEnumerable
+{
+    private string[] items = { "apple", "banana", "orange" };
+
+    public IEnumerator GetEnumerator()
+    {
+        return items.GetEnumerator();
+    }
+}

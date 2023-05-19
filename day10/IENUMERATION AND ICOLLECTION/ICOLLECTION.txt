@@ -1,0 +1,76 @@
+ICollection:
+The ICollection interface represents a collection of elements and extends IEnumerable. It adds additional members for managing and manipulating the collection, such as Count (property that retrieves the number of elements) and methods like Add, Remove, Clear, etc.
+Here's an example using ICollection:
+
+csharp
+Copy code
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        MyCollection collection = new MyCollection();
+        collection.Add("apple");
+        collection.Add("banana");
+        collection.Add("orange");
+
+        Console.WriteLine("Count: " + collection.Count);
+
+        collection.Remove("banana");
+
+        foreach (string item in collection)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+class MyCollection : ICollection
+{
+    private ArrayList items = new ArrayList();
+
+    public int Count => items.Count;
+    public bool IsSynchronized => items.IsSynchronized;
+    public object SyncRoot => items.SyncRoot;
+
+    public void Add(object item)
+    {
+        items.Add(item);
+    }
+
+    public void Clear()
+    {
+        items.Clear();
+    }
+
+    public bool Contains(object item)
+    {
+        return items.Contains(item);
+    }
+
+    public void CopyTo(Array array, int index)
+    {
+        items.CopyTo(array, index);
+    }
+
+    public IEnumerator GetEnumerator()
+    {
+        return items.GetEnumerator();
+    }
+
+    public void Remove(object item)
+    {
+        items.Remove(item);
+    }
+}
+In this example, MyCollection implements ICollection and provides implementations for methods like Add, Remove, Clear, etc. It internally uses an ArrayList to store the items. The Count property is used to retrieve the number of elements in the collection.
+
+The ICollection interface extends IEnumerable, so you can still use a foreach loop to iterate over the collection.
+
+In summary, IEnumerable allows you to iterate over a collection, while ICollection extends IEnumerable and adds methods for managing and manipulating the collection.
+
+
+
+

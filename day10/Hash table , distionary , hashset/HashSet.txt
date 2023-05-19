@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Create a new HashSet
+        HashSet<string> hSet = new HashSet<string>();
+
+        // Add elements to the HashSet
+        hSet.Add("apple");
+        hSet.Add("banana");
+        hSet.Add("orange");
+
+        // Check if an element exists in the HashSet
+        bool containsApple = hSet.Contains("apple");
+        Console.WriteLine("HashSet contains 'apple': " + containsApple);
+
+        // Remove an element from the HashSet
+        bool removedBanana = hSet.Remove("banana");
+        Console.WriteLine("Removed 'banana' from HashSet: " + removedBanana);
+
+        // Iterate over the elements in the HashSet
+        foreach (string element in hashSet)
+        {
+            Console.WriteLine(element);
+        }
+
+        // Clear all elements from the HashSet
+        hSet.Clear();
+        Console.WriteLine("HashSet count after clearing: " + hSet.Count);
+    }
+}
+
+
+
+
+
+
+
+
