@@ -65,11 +65,6 @@ class MyCollection : ICollection
         items.Remove(item);
     }
 }
-In this example, MyCollection implements ICollection and provides implementations for methods like Add, Remove, Clear, etc. It internally uses an ArrayList to store the items. The Count property is used to retrieve the number of elements in the collection.
-
-The ICollection interface extends IEnumerable, so you can still use a foreach loop to iterate over the collection.
-
-In summary, IEnumerable allows you to iterate over a collection, while ICollection extends IEnumerable and adds methods for managing and manipulating the collection.
 
 
 
