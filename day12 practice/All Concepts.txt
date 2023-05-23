@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+
+namespace day12_Practice.All_Concepts
+{
+
+    class BankingSystem
+    {
+        readonly int _id=0;
+        public string name { get; set; }
+        static readonly string BankName; // Initialized using static Contructor........belong to class
+        static string BankStatus="open";  // belong to class level
+        public const decimal MinimumBalance = 100.00m;  // All Variables......................global scope
+        public bool AccStatus { get; set; }
+        public BankingSystem()
+        {    
+            _id++;
+        }
+        static BankingSystem()//...............static constructor
+        {
+            BankName = "ABC";
+        }
+
+        private string[] data = new string[5];
+
+        // Indexer definition.................................
+        public string this[int index]
+        {
+            get { return data[index]; }
+            set { data[index] = value; }
+        }
+
+        public void Display()// static function access using class name and belong to class...
+        {
+            Console.WriteLine("bank name : " + BankName);
+            Console.WriteLine("id : "+_id);
+            Console.WriteLine("name : " + name);
+            Console.WriteLine("status : " + BankStatus);
+            Console.WriteLine("MinimumBalance : " + MinimumBalance);
+            Console.WriteLine(data[0]);
+            Console.WriteLine(data[1]); 
+
+        }
+    }
+
+
+    internal class AllConcepts
+    {
+        public static void Main(string[] args)
+        {
+            BankingSystem b = new BankingSystem();
+
+            b.name = "sam";
+            b.AccStatus= true; 
+            b[0] = "Current Account";
+            b[1] = "Saving Account";
+            b[2] = "New Saving Account";
+            b[3] = "Exits Saving Account";
+
+            b.Display()
+;
+            Console.WriteLine(b[2]);
+            Console.WriteLine(b[3]);
+
+            Console.ReadLine();
+
+        }
+        
+    }
+}

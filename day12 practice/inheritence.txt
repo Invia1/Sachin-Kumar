@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day12_Practice.Inheritence
+{
+    class Person
+    {
+        public void ReuseMethod() { Console.WriteLine("This Person is Resuing"); }
+        public void display() { Console.WriteLine("This is Person"); }
+
+       public void BaseKeywordMethod(int b)
+        {
+            Console.WriteLine(b+"Ok You're calling base class between execution through base keyword");
+        }
+    }
+
+    class Teacher : Person
+    {
+        public void display(int n) { base.BaseKeywordMethod(n); Console.WriteLine("This is Teacher"); }
+    }
+    class Customer : Person
+    {
+       public void display(){ Console.WriteLine("This is Customer"); }
+    }
+   
+    class Demo
+    { 
+        public static void Main(string[] args)
+        {   
+            // Method hidding....
+            Customer c = new Customer();
+            c.display(); // When Child's class hide's the parrent class method because first priority to called their function if it is not find then they used to find in their out/upper scope. know this Concept called method hidding.
+
+            // Next is Reusuablity.....
+            c.ReuseMethod();
+
+            // Concept of  using base Keyword... and calling base class while Between in execution...
+               Teacher t = new Teacher();
+            t.display(8);
+
+         // Concept based on Runtime 
+            Person p = new Teacher(); // p is a reference type variable used to nevigate memory Teacher Object...and this not allowed to access pure fuction of child class access only person memory .
+            p.display();
+
+            Console.ReadLine();
+        }
+    }
+}
