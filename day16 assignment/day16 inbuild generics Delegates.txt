@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+
+namespace day15_d
+{
+
+ // # three  InbuildDelegates :   ---- 3 topics 
+ // 1. Func : (Keyword)
+ // 2. Action : (Keyword)
+ // 3. Predicate : (Keyword)
+
+    class FunsExample
+    {
+        // Func KeyWord is using to Whenever we suppose to get output from any function
+        public static double AddNumer(int a , float f , double d) 
+        {
+            return a + f + d;
+        }
+    }
+
+    class ActionExample
+    {// Action Generic delegate is whenever we don't want Any kind value from function
+        public static void AddMul(int n1, double n2)
+        {
+            Console.WriteLine("ActionKeyWord Example...."); //
+            Console.WriteLine("addition is = " + (n1+n2));
+            Console.WriteLine("multiplication is = " + (n1 * n2));//
+        }
+
+    }
+
+    class PredicateExaple
+    { // Predicate Generic Delegate used for whenever function return bool type.
+        public static bool PredicateKeyWord(string name )
+        { 
+            if(name.Length > 5) return true; return false;
+        }
+    }
+
+    
+    internal class InBuildDelegates 
+    {
+        // Now using in build Delegates 
+        static void Main(string[] args) 
+        {
+            // func generic delecate return type must accept upto 16 parametes...
+            Func<int, float, double, double> obj = FunsExample.AddNumer;
+            Console.WriteLine(obj(1,2.0f,3.33));
+            Console.WriteLine();
+
+            // Action generic delegates No return type accept upto 16 parameters... 
+            Action<int, double> obj2= ActionExample.AddMul;
+            obj2(1,2.0);
+
+            // predicate generic delegates bool type of return type and accept upto 16 arguments...
+            // 
+            Predicate<string> obj3 = PredicateExaple.PredicateKeyWord;
+            Console.WriteLine(obj3("/nperSon Name"));
+
+            Console.ReadLine();
+
+        }
+        
+
+    }
+}

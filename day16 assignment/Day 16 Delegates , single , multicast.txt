@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+
+// # 3 --- topics
+// 1. Delegates
+// 2. Single Delegates 
+// 3. multicast Delegates
+
+
+//  # Delegates defines as function pointer and delegates object used to stores refrence of any functions and multi functions syntax is -- Delegate
+// through delegates we achieve high end of Abstraction, Contains(AbstractClass , Interface);
+// wrapper of Functions thats states the Encasulate the Functions
+// 
+
+namespace day15_d
+{
+    // how to make delegate and use of delegates....
+    // first make delegate and syntax is <modifer>  , delegate , datatype, delegateName { Arguments  }; 
+
+    delegate void CustDelegate(string name);
+        
+    class person
+    {
+        //int id;
+        //string name;
+
+        //public person(int id=1, string name="sam") { this.id = id; this.name = name; }
+
+        public static void hobbies(string name)        // make delegate for that and function pointer to point that function (store in reference variable)
+        {
+            Console.WriteLine(name+"'s Playing football");
+        }
+
+        public static void study(string name )       // make delegate for that and function pointer to point that function (store in reference variable)
+        {
+            Console.WriteLine(name+"'s C# dotnet");
+        }
+
+        public void expenses()    // not showing another person..........
+        { 
+            Console.WriteLine(" expences ");
+        }
+
+
+
+    }
+
+    internal class Program
+    {
+        public static void Main(string[] args) 
+        {
+            // After that make an delegate to wrap the function or we can say pointer of function to point/refer to particuler or multiple functions...
+
+            person p = new person();
+
+            CustDelegate cusDel = new CustDelegate(person.hobbies); 
+
+             cusDel("Persion Name");
+            cusDel("Persion Name");  // both are single delegates 
+
+            cusDel += person.study;  // (+=)Multicast operator --- this line makes multicast delegates... and these all are user defined delegates.
+
+            cusDel("Reference"); // calling all function line by line that are store referece of all function.... 
+
+            Console.WriteLine("\n\nEnd..............");
+            Console.ReadLine();
+
+        }
+    }    
+
+}

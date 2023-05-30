@@ -1,0 +1,31 @@
+using System;
+
+
+//     return name + "Hello";
+
+namespace day16
+{
+    // Now Anonymous Function is used when code is too small and their is no sence to make a Whole Function.
+    delegate string MyDel(string n);
+    delegate double MultiDel(int i , double j);
+    internal class AnonymousFuntion
+    {
+        static void Main(string[] args)
+        {
+            AnonymousFuntion Af= new AnonymousFuntion();
+
+            MyDel obj =delegate(string n) { return "person"+n; };
+            obj("Hello");
+
+            // Anonymous Delegate / function
+
+            MultiDel obj2 = delegate (int i,double j)
+            {
+                return i * j;
+            };
+
+            var temp = 10 + obj2(1, 8.99);
+            Console.Write(temp);
+        }
+    }
+}

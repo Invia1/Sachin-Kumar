@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day16
+{
+    delegate string DoNames();
+   // delegate int doArth();
+    class CallBackFunction
+    {
+        public  string HP() { return "HP Is Called"; }
+        public  string Asus() { return "Asus Is Called"; }
+        public  string Dell() { return "Dell Is Called"; }
+    }
+
+    class Maths
+    {
+        public int add(int x, int y) { return x + y; }
+        public int sub(int x, int y) { return x - y; }
+        public int mul(int x, int y) { return x * y; }
+        public int div(int x, int y) { return x / y; }
+
+     //   int doMaths(int x, int y ,) { }
+
+    }
+    internal class CallBackfunction
+    {
+        public static void doOperation(DoNames doNames) 
+        {
+            Console.WriteLine(doNames());
+        }
+
+       
+        public static void Main(string[] args)
+        {
+            CallBackFunction cf=new CallBackFunction();
+
+            doOperation(cf.Dell);
+            doOperation(cf.HP);
+            doOperation(cf.Asus);
+
+
+            Console.WriteLine("Concept of Call backs");
+            Console.ReadLine();
+        }
+
+    }
+}

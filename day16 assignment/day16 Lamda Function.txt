@@ -1,0 +1,24 @@
+using System;
+
+
+namespace day16
+{
+    public delegate double multiDel(int i, double d);
+    internal class lamdafunction
+    {
+        static void Main(string[] args)
+        {
+            // lamda function is sort hand / sort form of Anonymous Funtion
+            Console.WriteLine("Example of lamda Function...");
+            multiDel obj = (int i, double d) => { return 10 + (i * d); };
+            var temp = obj(1, 18);
+            Console.WriteLine(temp);
+
+            obj = (int i , double j) => { return 11 + (i * j); };
+
+            //var t = obj(1, 8);
+            //Console.WriteLine(t);
+
+        }
+    }
+}
